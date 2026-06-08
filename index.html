@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>南部週末含早餐飯店搜尋</title>
+  <meta name="description" content="台灣南部六日住宿含早餐優惠搜尋入口。">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="search-surface" aria-labelledby="page-title">
+      <div class="brand-strip">
+        <div class="brand-mark" aria-hidden="true">
+          <i data-lucide="bed-double"></i>
+        </div>
+        <div>
+          <p class="eyebrow">Taiwan South Weekend Stay</p>
+          <h1 id="page-title">南部週末含早餐飯店搜尋</h1>
+        </div>
+      </div>
+
+      <form id="hotel-form" class="finder">
+        <fieldset class="destination-panel">
+          <legend>地區</legend>
+          <div class="destination-grid" role="radiogroup" aria-label="住宿地區">
+            <label class="destination-option">
+              <input type="radio" name="destination" value="嘉義 飯店 含早餐" data-label="嘉義" data-agoda-slug="chiayi-tw" checked>
+              <span>嘉義</span>
+            </label>
+            <label class="destination-option">
+              <input type="radio" name="destination" value="台南 飯店 含早餐" data-label="台南" data-agoda-slug="tainan-tw">
+              <span>台南</span>
+            </label>
+            <label class="destination-option">
+              <input type="radio" name="destination" value="高雄 飯店 含早餐" data-label="高雄" data-agoda-slug="kaohsiung-tw">
+              <span>高雄</span>
+            </label>
+            <label class="destination-option">
+              <input type="radio" name="destination" value="屏東 飯店 含早餐" data-label="屏東" data-agoda-slug="pingtung-tw">
+              <span>屏東</span>
+            </label>
+            <label class="destination-option">
+              <input type="radio" name="destination" value="墾丁 飯店 含早餐" data-label="墾丁" data-agoda-slug="kenting-tw">
+              <span>墾丁</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="control-grid">
+          <label>
+            <span>入住</span>
+            <input id="checkin" type="date" required>
+          </label>
+          <label>
+            <span>退房</span>
+            <input id="checkout" type="date" required>
+          </label>
+          <label>
+            <span>最低預算</span>
+            <input id="min-price" type="number" min="0" step="100" value="2000" inputmode="numeric">
+          </label>
+          <label>
+            <span>最高預算</span>
+            <input id="max-price" type="number" min="0" step="100" value="10000" inputmode="numeric">
+          </label>
+          <label>
+            <span>大人</span>
+            <input id="adults" type="number" min="1" max="8" step="1" value="2" inputmode="numeric">
+          </label>
+          <label>
+            <span>房間</span>
+            <input id="rooms" type="number" min="1" max="4" step="1" value="1" inputmode="numeric">
+          </label>
+        </div>
+
+        <div class="action-row">
+          <button class="primary-action" type="button" id="open-all">
+            <i data-lucide="external-link"></i>
+            <span>開啟全部平台</span>
+          </button>
+          <button class="icon-action" type="button" id="next-weekend" aria-label="下一個週六日" title="下一個週六日">
+            <i data-lucide="calendar-plus"></i>
+          </button>
+          <button class="icon-action" type="button" id="copy-summary" aria-label="複製搜尋條件" title="複製搜尋條件">
+            <i data-lucide="copy"></i>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="results-area" aria-label="搜尋連結">
+      <div class="summary-line" id="summary-line"></div>
+      <div class="platform-list" id="platform-list"></div>
+    </section>
+
+    <section class="watchlist" aria-label="比價檢核">
+      <div class="check-header">
+        <i data-lucide="list-checks" aria-hidden="true"></i>
+        <h2>比價檢核</h2>
+      </div>
+      <div class="check-grid">
+        <label><input type="checkbox"> 含早餐顯示在房價條件內</label>
+        <label><input type="checkbox"> 總價含稅費與服務費</label>
+        <label><input type="checkbox"> 可取消期限可接受</label>
+        <label><input type="checkbox"> 入住人數與房間數正確</label>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
